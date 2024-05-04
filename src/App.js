@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Header from './Header';
 import './App.css';
+import backgroundImage from './bg.jpg';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={backgroundImage} alt="Background" className="background-image" />
+      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <h1 className="title">El Mejor Bot De Discord</h1>
+      <button className='button'><a href='#'>Añadir</a></button>
     </div>
   );
 }

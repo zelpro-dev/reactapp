@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+/* Aquí están los estilos CSS */
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+.background-image {
+  /* Ajustamos el tamaño de la imagen para ocupar todo el cuerpo */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Evita que la imagen se deforme y la ajusta para cubrir */
+  z-index: -1;
+  /* Envía la imagen al fondo */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.title {
+  position: absolute;
+  /* Establece el posicionamiento absoluto */
+  top: 35%;
+  /* Coloca el elemento a la mitad del eje Y */
+  left: 50%;
+  /* Coloca el elemento a la mitad del eje X */
+  transform: translate(-50%, -50%);
+  /* Centra el elemento */
   color: white;
+  /* Color del texto */
+  font-size: 36px;
+  /* Tamaño del texto */
+  text-align: center;
+  /* Alineación del texto */
+  z-index: 1;
+  /* Asegura que el h1 esté sobre la imagen de fondo */
+  font-weight: 800;
 }
 
-.App-link {
-  color: #61dafb;
+.button {
+  position: absolute;
+  /* Establece el posicionamiento absoluto */
+  top: 45%;
+  /* Coloca el elemento a la mitad del eje Y */
+  left: 50%;
+  /* Coloca el elemento a la mitad del eje X */
+  transform: translate(-50%, -50%);
+  /* Centra el elemento */
+  text-align: center;
+  /* Alineación del texto */
+  z-index: 1;
+  /* Asegura que el h1 esté sobre la imagen de fondo */
+  background: rgb(11, 11, 11);
+  border: 0px;
+  padding: 15px 40px 15px 40px;
+  border-radius: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button a {
+  font-weight: 600;
+  font-size: 24px;
+  /* Tamaño del texto */
+  color: white;
+  /* Color del texto */
+  text-decoration: none;
+}
+
+.button a::before {
+  content: '';
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .3s;
+}
+
+.button a:hover::before {
+  width: 50%;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: rgb(11, 11, 11);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 32px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  /* Cambia el color del texto cuando el cursor está encima */
+  -webkit-background-clip: text;
+  /* Aplica el gradiente al texto */
+  background-clip: text;
+}
+
+.logo:hover {
+  background-image: linear-gradient(to right, rgb(245, 2, 245), rgb(3, 37, 254));
+  /* Define el gradiente */
+  color: transparent;
+  /* Hace que el texto sea transparente para mostrar el gradiente */
+  transition: .3s ease-out;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: .3s;
+}
+
+.navbar a:hover::before {
+  width: 100%;
+}
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .button {
+    top: 58%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .header {
+    padding: 20px 50px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: rgb(11, 11, 11);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 99;
+  }
+
+  .navbar a {
+    margin-bottom: 14px;
+    padding: 5px;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .line {
+    transform-origin: center;
+  }
+
+  .line:nth-child(2) {
+    transform: scaleX(1);
+  }
+
+  .line:nth-child(1),
+  .line:nth-child(3) {
+    transform-origin: center;
   }
 }
