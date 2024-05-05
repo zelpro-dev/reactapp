@@ -1,11 +1,9 @@
 const Navbar = ({ isMenuOpen }) => {
     return (
       <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Gallery</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
+        <a href="#">Inicio</a>
+        <a href="#">Explorar</a>
+        <a href="#">Soporte</a>
       </nav>
     );
   }
