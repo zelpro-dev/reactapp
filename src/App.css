@@ -9,53 +9,48 @@
   padding: 0;
 }
 
-body,
+body {
+  color: #fff;
+  background-color: black;
+}
+
 .background-image {
-  /* Ajustamos el tamaño de la imagen para ocupar todo el cuerpo */
+  position: relative;
+  width: 100%; 
+  height: 1000px;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+.background-image img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Evita que la imagen se deforme y la ajusta para cubrir */
   z-index: -1;
-  /* Envía la imagen al fondo */
 }
 
 .title {
   position: absolute;
-  /* Establece el posicionamiento absoluto */
-  top: 35%;
-  /* Coloca el elemento a la mitad del eje Y */
+  top: 40%;
   left: 50%;
-  /* Coloca el elemento a la mitad del eje X */
   transform: translate(-50%, -50%);
-  /* Centra el elemento */
   color: white;
-  /* Color del texto */
   font-size: 36px;
-  /* Tamaño del texto */
   text-align: center;
-  /* Alineación del texto */
   z-index: 1;
-  /* Asegura que el h1 esté sobre la imagen de fondo */
   font-weight: 800;
 }
 
 .button {
   position: absolute;
-  /* Establece el posicionamiento absoluto */
-  top: 45%;
-  /* Coloca el elemento a la mitad del eje Y */
+  top: 50%;
   left: 50%;
-  /* Coloca el elemento a la mitad del eje X */
   transform: translate(-50%, -50%);
-  /* Centra el elemento */
   text-align: center;
-  /* Alineación del texto */
   z-index: 1;
-  /* Asegura que el h1 esté sobre la imagen de fondo */
   background: rgb(11, 11, 11);
   border: 0px;
   padding: 15px 40px 15px 40px;
@@ -65,9 +60,7 @@ body,
 .button a {
   font-weight: 600;
   font-size: 24px;
-  /* Tamaño del texto */
   color: white;
-  /* Color del texto */
   text-decoration: none;
 }
 
@@ -84,6 +77,33 @@ body,
 
 .button a:hover::before {
   width: 50%;
+}
+
+.feature {
+  position: relative;
+  text-align: center;
+  padding: 100px;
+}
+
+.feature h1 {
+  font-size:  34px;
+  font-weight: 600;
+}
+
+.feature p {
+  font-size:  18px;
+  margin-top: 10px; 
+  font-weight: 400;
+}
+
+.feature img {
+  margin-top: 60px; 
+  box-shadow: 0 0 40px rgba(80, 80, 80, 0.5);
+  max-height: 408px;
+  max-width: 778px;
+  height: 100%;
+  width: 100%;
+  border-radius: 24px;
 }
 
 .header {
@@ -104,17 +124,13 @@ body,
   text-decoration: none;
   font-weight: 700;
   color: #fff;
-  /* Cambia el color del texto cuando el cursor está encima */
   -webkit-background-clip: text;
-  /* Aplica el gradiente al texto */
   background-clip: text;
 }
 
 .logo:hover {
-  background-image: linear-gradient(to right, rgb(245, 2, 245), rgb(3, 37, 254));
-  /* Define el gradiente */
+  background-image: linear-gradient(to right, rgb(245, 2, 245), rgb(35, 60, 223));
   color: transparent;
-  /* Hace que el texto sea transparente para mostrar el gradiente */
   transition: .3s ease-out;
 }
 
