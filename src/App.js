@@ -13,7 +13,7 @@ function App() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // 8:15
+  // 50:34
 
   return (
     <div className="App">
@@ -36,7 +36,6 @@ function App() {
         <p>Gran facilidad para configurar.</p>
       </section>
       <img src={backgroundImage2} alt="Background" className="background-image" />
-      <iframe className='support' src="https://discordapp.com/widget?id=1222991487344705536&theme=dark" width="300" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       <Footer />
     </div>
   );
